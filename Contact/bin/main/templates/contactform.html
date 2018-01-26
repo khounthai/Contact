@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Fiche de saisie d'un contact</title>
+</head>
+
+<body>
+	<H1>Formulaire de saisie d'un contact</H1>
+	<br />
+	<br />
+
+	
+
+	<form action="#" th:action="@{/enregistrer-un-contact}" th:object="${contact}"
+		method="post">
+		<table>
+
+			<tr>
+				<td>First Name:</td>
+				<td><input type="text" th:field="*{firstName}" /></td>
+				<td th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">firstname Error</td>
+			</tr>
+
+			<tr>
+				<td>Last Name:</td>
+				<td><input type="text" th:field="*{lastName}" /></td>
+				<td th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">lastname
+					Error</td>
+			</tr>
+
+
+			<tr>
+				<td>Street</td>
+				<td><input type="text" th:field="*{street}" /></td>
+				<td th:if="${#fields.hasErrors('street')}" th:errors="*{street}">street
+					Error</td>
+			</tr>
+			<tr>
+				<td>Posta code:</td>
+				<td><input type="text" th:field="*{postalCode}" /></td>
+				<td th:if="${#fields.hasErrors('postalCode')}"
+					th:errors="*{postalCode}">postalCode Error</td>
+			</tr>
+			<tr>
+				<td>City:</td>
+				<td><input type="text" th:field="*{city}" /></td>
+				<td th:if="${#fields.hasErrors('city')}" th:errors="*{city}">city
+					Error</td>
+			</tr>
+			<tr>
+				<td>Birthday:</td>
+				<td><input type="text" th:field="*{birthday}" /></td>
+				<td th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}">birthday
+					Error</td>
+			</tr>
+			<tr>
+				<td>
+					<button type="submit">Enregistrer</button>								
+				</td>
+				
+				<td>
+						<button type="reset">Remise à zéro</button>								
+				</td>
+				
+				<td>
+							<a href="/">  Retour </a>								
+				</td>
+			
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>

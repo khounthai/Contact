@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Contacts</title>
+
+</head>
+<body>
+	<H1>Liste des contacts</H1>
+	<br />
+	<br />
+
+	<div>
+		<table border="1">
+			<tr>
+				<td>id</td>
+				<td>firstName</td>
+				<td>lastName</td>
+				<td>street</td>
+				<td>postalCode</td>
+				<td>city</td>
+				<td>birthday</td>
+			</tr>
+
+			<th:block th:each="c : ${liste}">
+				<tr>
+					<td><a th:href="@{/fiche-contact/{id}(id=${c.id})}" ><span th:text="${c.id}"></span></a></td>
+					<td th:text="${c.firstName}" />
+					<td th:text="${c.lastName}" />
+					<td th:text="${c.street}" />
+					<td th:text="${c.postalCode}" />
+					<td th:text="${c.city}" />
+					<td th:text="${c.birthday}" />
+				</tr>
+			</th:block>
+		</table>
+	</div>
+
+	<br/>
+	
+	<form action="#" th:action="@{/ajouter-un-contact}" method="get">
+		<button type="submit">Ajouter</button>
+	</form>
+
+
+
+</body>
+</html>
