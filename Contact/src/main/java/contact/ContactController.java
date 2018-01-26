@@ -39,13 +39,16 @@ public class ContactController extends WebMvcConfigurerAdapter{
 	}
 
 	@PostMapping("/enregistrer-un-contact")
-	public String checkContactInfo(@Valid Contact contact,BindingResult bindingResult,HttpServletResponse response) {
+	public String checkContactInfo(@Valid Contact contact,BindingResult bindingResult) {
 		
 		if (bindingResult.hasErrors()) {
 			return "contactform";
 		}
-			
+		
+		System.out.println("modifier id="+contact.getId());
+		
 		repository.save(contact);
+	
 		
 		return "redirect:/";
 	}
@@ -63,6 +66,20 @@ public class ContactController extends WebMvcConfigurerAdapter{
 		return "contactform";
 	}
 	
+	@GetMapping("/supprimer-contact/{id}")
+	public String supprimerContact(Model model,@PathVariable("id") Long id){
+		System.out.println("id="+id);
+		Contact c=repository.findOne(id);
+		
+		if (c==null)
+			return "contactform";
+		else
+		{
+			repository.delete(c);
+		}	
+		
+		return "redirect:/";
+	}
 	
 	
 }

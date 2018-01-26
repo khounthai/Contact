@@ -16,6 +16,13 @@
 		method="post">
 		<table>
 
+			<tr style="display: none;">
+				<td>Id:</td>
+				<td><input type="text" th:field="*{id}" /></td>
+				<td th:if="${#fields.hasErrors('id')}" th:errors="*{id}">id Error</td>
+			</tr>
+
+
 			<tr>
 				<td>First Name:</td>
 				<td><input type="text" th:field="*{firstName}" /></td>
@@ -28,7 +35,6 @@
 				<td th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">lastname
 					Error</td>
 			</tr>
-
 
 			<tr>
 				<td>Street</td>
@@ -63,8 +69,12 @@
 						<button type="reset">Remise à zéro</button>								
 				</td>
 				
+				<td>				
+					<td><a th:href="@{/supprimer-contact/{id}(id=*{id})}" ><span th:text="Supprimer"></span></a></td>								
+				</td>
+				
 				<td>
-							<a href="/">  Retour </a>								
+						<a href="/">  Retour </a>								
 				</td>
 			
 			</tr>
