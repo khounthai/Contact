@@ -1,8 +1,6 @@
 package contact;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -12,6 +10,13 @@ import org.springframework.context.annotation.Bean;
 
 import contact.Contact;
 import contact.ContactRepository;
+
+
+/**
+ * Class de démarrage de l'application
+ * @author lenovo
+ *
+ */
 
 @SpringBootApplication
 public class Application {

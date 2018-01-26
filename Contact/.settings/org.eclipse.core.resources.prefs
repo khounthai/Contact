@@ -1,2 +1,6 @@
 eclipse.preferences.version=1
 encoding//src/main/java/contact/Application.java=UTF-8
+encoding//src/main/java/contact/Contact.java=UTF-8
+encoding//src/main/java/contact/ContactController.java=UTF-8
+encoding//src/main/java/contact/ContactRepository.java=UTF-8
+encoding/doc=UTF-8

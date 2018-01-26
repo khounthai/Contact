@@ -1,7 +1,6 @@
 package contact;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,6 +11,11 @@ import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+/**
+ * Class contact
+ * @author lenovo
+ *
+ */
 @Entity
 public class Contact {
 
@@ -94,10 +98,6 @@ public class Contact {
 		this.birthday =  birthday;
 	}
 
-	public String getStringBirthday() {
-		return DateUtil.format(this.birthday);
-	}
-
 	public Contact(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -107,15 +107,5 @@ public class Contact {
 	public String toString() {
 		return "Customer [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", street=" + street
 				+ ", postalCode=" + postalCode + ", city=" + city + ", birthday=" + birthday + "]";
-	}
-	
-	public void CopyFromContactForm(ContactForm c) {
-		this.firstName=c.getFirstName();
-		this.lastName=c.getLastName();
-		this.street=c.getStreet();
-		this.postalCode=c.getPostalCode();
-		this.city=c.getCity();
-		this.birthday=c.getBirthday();
-		
 	}
 }
